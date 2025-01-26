@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text should be hidden initially.
+  </div>
+
+  <script>
+    // Incorrect use of hidden attribute, leading to unexpected behavior
+    document.getElementById("myDiv").hidden = true;
+    document.getElementById("myDiv").hidden = false;  // This line doesn't work as expected
+
+    setTimeout(function(){
+document.getElementById("myDiv").hidden = false; //This will work, due to async nature
+    },1000)
+
+  </script>
+</body>
+</html>
