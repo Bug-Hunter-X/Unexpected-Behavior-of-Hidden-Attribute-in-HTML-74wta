@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text should be hidden initially.
+  </div>
+
+  <script>
+    // Correct use of hidden attribute using setTimeout for rendering consistency
+    document.getElementById("myDiv").hidden = true;
+    setTimeout(function(){
+document.getElementById("myDiv").hidden = false; 
+    },100); //Asynchronous nature of JavaScript and browser's rendering, the delay is added
+  </script>
+</body>
+</html>
